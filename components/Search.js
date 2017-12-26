@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, StyleSheet, TextInput, Image} from 'react-native'
+import {View, StyleSheet, Text, TextInput, Image, TouchableOpacity} from 'react-native'
 
 
 export default class Search extends React.Component{
@@ -13,7 +13,7 @@ export default class Search extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            city : 'Brignoles'
+            city : ' '
         }
     }
 
@@ -22,27 +22,52 @@ export default class Search extends React.Component{
         this.setState({city})
     }
 
+    submit(){
+        console.log("function submit");
+    }
+
     render() {
       return (
         <View style={styles.container}>
            <TextInput 
             underlineColorAndroid='transparent'
-            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-            value={this.state.city}
+            placeholder= 'Ex: Brignoles'
+            placeholderTextColor= 'grey'
+            style={styles.TextInputCity}
             onChangeText={(text) => this.setCity(text)}
             />
+            <TouchableOpacity
+            style={styles.buttonSearch}
+            onPress={() => this.submit()}
+            >
+                <Text style={styles.titleButton}>Rechercher ville</Text>
+            </TouchableOpacity>
         </View>
       )
     }
-
-
 
 }
 
 const styles = StyleSheet.create({
     container: {
-
+        flex: 1, 
     },
+    TextInputCity: {
+        height: 40,
+        margin: 10,
+        padding: 10,
+        borderColor: 'grey',
+        borderWidth: 1
+    },
+    buttonSearch: {
+        margin: 10,
+        padding: 10,
+        backgroundColor: 'grey',
+    },
+    titleButton: {
+        color: 'white',
+        textAlign: 'center',
+    }
 })
 
 

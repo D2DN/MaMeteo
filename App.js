@@ -29,7 +29,6 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar hidden= {true} />
         <Tabs/>
       </View>
     );
@@ -39,6 +38,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 40, //TODO ==> For iphone X delete this line and verified if OK
   },
 });
 
