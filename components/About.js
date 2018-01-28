@@ -1,6 +1,9 @@
 import React from 'react'
 import {View, Text, StyleSheet, Image, Button} from 'react-native'
 
+/**
+ * Simple view to create a tabBar navigation
+ */
 export default class About extends React.Component {
 
   static navigationOptions = {
@@ -9,17 +12,13 @@ export default class About extends React.Component {
     }
   }
 
-  search(){
-    this.props.navigation.navigate('Search')
-  }
-
     render() {
       return (
         <View style={styles.container}>
-          <Text style={styles.title}> à propos de moi</Text>
-          <Text> dsopkf kdspkf skpdf dspofkds fksdpfo ksdo fpkdspo fkdspkf 
-            ds fkpds kfpsodk fpodsk get  sdofpkpsqd kfp </Text>
-          <Button style={styles.buttonSearch} onPress={() => this.search()} title='Rechercher' />
+          <Text style={styles.title}>Pourquoi cette application</Text>
+          <Text style= {styles.texte}>L'objectif de cette application est de montrer comment fonctionne 
+            une application mobile avec le framework React Native.
+          </Text>
         </View>
       )
     }
@@ -32,10 +31,13 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 22,
-        marginBottom: 20,
+        margin: 20,
+    },
+    texte: {
+      margin: 10,
     },
     buttonSearch: {
-      
+
     }
 })
 
